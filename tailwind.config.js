@@ -5,10 +5,17 @@ module.exports = {
   ],
   darkMode: false,
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        BenchNine: ['BenchNine', 'sans-serif'],
+        BebasNeue: ['Bebas Neue', 'serif'],
+        Poppins: ['BenchNine', 'serif']
+      },
+    },
   },
   variants: {
     extend: {},
   },
   plugins: [],
+  mode: 'jit',
 }

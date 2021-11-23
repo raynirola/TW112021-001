@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import { Fragment } from "react";
+import { Header, Sidebar } from "../components";
 
 const Home = () => (
   <Fragment>
@@ -9,7 +10,8 @@ const Home = () => (
     </Head>
 
     <main>
-      <h1>Work In Progress</h1>
+      <Header/>
+      <Sidebar/>
     </main>
   </Fragment>
 );

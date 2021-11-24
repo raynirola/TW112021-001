@@ -6,19 +6,19 @@ const slides = [
     id: 1,
     title: "Made Visible",
     subtitle: "Design is Intelligence",
-    image: "/hero1.jpg",
+    image: "https://assets.website-files.com/5f5f94343affd51e900cd45c/5f5f94343affd552150cd475_heroimage1.jpg",
   },
   {
     id: 2,
     title: "But Significant",
     subtitle: "Make it Simple",
-    image: "/hero2.jpg",
+    image: "https://assets.website-files.com/5f5f94343affd51e900cd45c/5f5f94343affd552cb0cd476_heroimage2.jpg",
   },
   {
     id: 3,
     title: "Is Good Design",
     subtitle: "Accessible Design",
-    image: "/hero3.jpg",
+    image: "https://assets.website-files.com/5f5f94343affd51e900cd45c/5f5f94343affd5ea700cd48c_heroimage3%20(1).jpg"
   },
 ]
 const Header = () => {
@@ -42,7 +42,7 @@ const Header = () => {
   const SingleSlide = ({ slide }) => <div className="relative min-h-full inset-0 flex items-center">
     <div className="absolute inset-0 opacity-80">
       {/* eslint-disable-next-line @next/next/no-img-element */ }
-      <img src={ slide.image } alt={ slide.subtitle } className="w-full h-full object-center object-cover"/>
+      <img src={ slide.image } alt={ slide.subtitle } loading="lazy" className="w-full h-full object-center object-cover"/>
     </div>
     <div className="w-full text-left text-white leading-none font-BebasNeue relative max-w-5xl mx-auto">
       <p className="tracking-[6px]">{ slide.subtitle }</p>

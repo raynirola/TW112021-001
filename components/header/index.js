@@ -1,6 +1,5 @@
 import { ApplicationLogo } from "../shared/applicationLogo";
-import { Fragment, useEffect, useState } from "react";
-import { Transition } from "@headlessui/react";
+import { useEffect, useState } from "react";
 
 const slides = [
   {
@@ -42,56 +41,46 @@ const Header = () => {
 
   const SingleSlide = ({ slide }) => {
     return (
-      <Transition
-        appear
-        show={ true }
-        as="div"
-        enter="transition-opacity duration-1000"
-        enterFrom="opacity-0"
-        enterTo="opacity-80"
-        className="relative min-h-full inset-0 flex items-center"
+      <div className="relative h-screen overflow-hidden inset-0 flex items-center bg-black/20"
+           data-aos="fade-left"
+           data-aos-mirror="true"
+           data-aos-duration="500"
+           data-aos-easing="ease-in-out"
       >
-        <>
-          <Transition.Child
-            as={Fragment}
-            enter="transition ease-in-out duration-300 transform"
-            enterFrom="translate-x-full"
-            enterTo="translate-x-0 opacity-80"
-            leave="transition ease-in-out duration-300 transform"
-            leaveFrom="translate-x-0"
-            leaveTo="translate-x-full"
-          >
-            {/* eslint-disable-next-line @next/next/no-img-element */ }
-            <img src={ slide.image } alt={ slide.subtitle } loading="lazy"
-                 className="absolute inset-0 w-full h-full object-center object-cover"/>
-          </Transition.Child>
-
-          <Transition.Child
-            beforeEnter={() => setTimeout(() => {}, 1000)}
-            as={Fragment}
-            enter="transition ease-in-out duration-300"
-            enterFrom="opacity-0"
-            enterTo="opacity-100"
-          >
-          <div className="w-full text-left text-white leading-none font-BebasNeue relative max-w-5xl mx-auto">
-            <p className="tracking-[6px]">{ slide.subtitle }</p>
-            <p className="text-[160px] uppercase tracking-[5px] mt-4">{ slide.title }</p>
-          </div>
-          </Transition.Child>
-        </>
-      </Transition>
+        <div className="absolute inset-0">
+          {/* eslint-disable-next-line @next/next/no-img-element */ }
+          <img
+            src={ slide.image }
+            alt={ slide.subtitle }
+            loading="lazy"
+            className="w-full h-full object-cover opacity-70 object-center animate-zoomOut"
+          />
+        </div>
+        <div data-aos-delay="700" data-aos="fade-in"
+             className="w-full max-w-md text-left text-white leading-none font-BebasNeue relative sm:max-w-5xl mx-auto">
+          <p className="tracking-[6px]">{ slide.subtitle }</p>
+          <p className="text-[80px] md:text-[160px] uppercase tracking-[5px] mt-4">{ slide.title }</p>
+        </div>
+      </div>
     )
   }
 
   return (
     <section className="h-screen relative bg-black overflow-x-hidden">
       <div className="absolute inset-0 grid place-items-center">
-        <h1 className="font-BebasNeue text-[70vh] text-white/20 font-bold leading-[1] whitespace-nowrap tracking-[0px]">
+        <h1
+          className="animate-slide font-BebasNeue text-[70vh] text-white/30 font-bold leading-[1] whitespace-nowrap tracking-[8px]">
           SIMPLICITY IS KEY
         </h1>
       </div>
       <SingleSlide slide={ currentSlide }/>
       <ApplicationLogo/>
+      <button className="sm:hidden w-[100px] absolute top-0 right-0 h-[100px] ml-auto hover:bg-white/10 flex-shrink-0">
+        <div className="mx-auto w-max">
+          <div className="h-px w-[32px] bg-white"/>
+          <div className="mt-3 h-px w-[22px] bg-white"/>
+        </div>
+      </button>
     </section>
   )
 }

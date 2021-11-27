@@ -1,8 +1,8 @@
-const Sidebar = () => {
+const Sidebar = ({menuShowHandler}) => {
   return (
     <section
       className="hidden fixed inset-y-0 right-0 h-screen text-white w-[100px] sm:flex flex-col justify-between border-l border-white/20">
-      <button className="w-full h-[100px] ml-auto hover:bg-white/10 flex-shrink-0">
+      <button onClick={menuShowHandler} className="w-full h-[100px] ml-auto hover:bg-white/10 flex-shrink-0">
         <div className="mx-auto w-max">
           <div className="h-px w-[32px] bg-white"/>
           <div className="mt-3 h-px w-[22px] bg-white"/>

@@ -1,6 +1,5 @@
 import Head from 'next/head'
 import { Fragment, useEffect, useState } from "react";
-import { ApplicationLogo } from "../components/shared/applicationLogo";
 import { Dialog, Transition } from "@headlessui/react";
 
 const slides = [
@@ -86,7 +85,14 @@ const Home = () => {
               )
             )
           }
-          <ApplicationLogo/>
+          <header className="absolute top-0 bg-white bg-opacity-[0.05] md:bg-transparent w-full h-[100px]">
+            {/* eslint-disable-next-line @next/next/no-html-link-for-pages */ }
+            <a href="/" className="absolute top-[35px] left-[42px]">
+              <img src="https://assets.website-files.com/5f5f94343affd51e900cd45c/5f5f94343affd54edd0cd4af_byra-logo.svg"
+                   loading="lazy" width="75" height="" id="top" alt=""/>
+            </a>
+          </header>
+
           <button onClick={ () => setShowDialog(!showDialog) }
                   className="sm:hidden w-[100px] absolute top-0 right-0 h-[100px] ml-auto hover:bg-white/10 flex-shrink-0 z-50">
             <div className="mx-auto w-max">
@@ -131,6 +137,71 @@ const Home = () => {
                 >
                   <div className="absolute inset-0 bg-black flex items-center px-8"/>
                 </Transition.Child>
+
+                  <div
+                    data-aos="fade-in"
+                    data-aos-delay="1000"
+                    className="absolute inset-0 flex items-center ml-10 md:ml-10 justify-start md:justify-center">
+                    <div className="max-w-sm w-full">
+                      <ul className="space-y-4">
+                        <li
+                        data-aos="fade-right"
+                        data-aos-duration="200"
+                        data-aos-delay="1200"
+                        >
+                          <a href="#" className="focus:outline-none group inline-flex items-center justify-start text-left font-BenchNine text-gray-400 text-[40px] hover:text-yellow-300 transform transition ease-in-out duration-100">
+                            <div className="mr-6">01</div>
+                            <div className="w-0 group-hover:w-[100px] h-px bg-yellow-300 transform transition ease-in-out duration-500"/>
+                            <div className="tracking-widest ml-6 uppercase">ABOUT US</div>
+                          </a>
+                        </li>
+                        <li
+                          data-aos="fade-right"
+                          data-aos-duration="200"
+                          data-aos-delay="1300"
+                        >
+                          <a href="#" className="focus:outline-none group inline-flex items-center justify-start text-left font-BenchNine text-gray-400 text-[40px] hover:text-yellow-300 transform transition ease-in-out duration-100">
+                            <div className="mr-6">02</div>
+                            <div className="w-0 group-hover:w-[100px] h-px bg-yellow-300"/>
+                            <div className="tracking-widest ml-6 uppercase">Services</div>
+                          </a>
+                        </li>
+                        <li
+                          data-aos="fade-right"
+                          data-aos-duration="200"
+                          data-aos-delay="1400"
+                        >
+                          <a href="#" className="focus:outline-none group inline-flex items-center justify-start text-left font-BenchNine text-gray-400 text-[40px] hover:text-yellow-300 transform transition ease-in-out duration-100">
+                            <div className="mr-6">03</div>
+                            <div className="w-0 group-hover:w-[100px] h-px bg-yellow-300 transform transition ease-in-out duration-500"/>
+                            <div className="tracking-widest ml-6 uppercase">PORTFOLIO</div>
+                          </a>
+                        </li>
+                        <li
+                          data-aos="fade-right"
+                          data-aos-duration="200"
+                          data-aos-delay="1500"
+                        >
+                          <a href="#" className="focus:outline-none group inline-flex items-center justify-start text-left font-BenchNine text-gray-400 text-[40px] hover:text-yellow-300 transform transition ease-in-out duration-100">
+                            <div className="mr-6">04</div>
+                            <div className="w-0 group-hover:w-[100px] h-px bg-yellow-300 transform transition ease-in-out duration-500"/>
+                            <div className="tracking-widest ml-6 uppercase">TEAM</div>
+                          </a>
+                        </li>
+                        <li
+                          data-aos="fade-right"
+                          data-aos-duration="200"
+                          data-aos-delay="1600"
+                        >
+                          <a href="#" className="focus:outline-none group inline-flex items-center justify-start text-left font-BenchNine text-gray-400 text-[40px] hover:text-yellow-300 transform transition ease-in-out duration-100">
+                            <div className="mr-6">05</div>
+                            <div className="w-0 group-hover:w-[100px] h-px bg-yellow-300 transform transition ease-in-out duration-500"/>
+                            <div className="tracking-widest ml-6 uppercase">Contact</div>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
 
               </div>
             </Dialog>

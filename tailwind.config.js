@@ -37,12 +37,23 @@ module.exports = {
           '50%': {
             transform: 'rotate(3deg)'
           },
+        },
+        diagonal: {
+          '0%': {
+            transform: 'translate3d( 200%, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(44deg)',
+            transformStyle: 'preserve-3d'
+          },
+          '100%': {
+            transform: 'translate3d( -120%, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(44deg)',
+            transformStyle: 'preserve-3d'
+          },
         }
       },
       animation: {
         slide: 'slide 24s linear infinite',
         wiggle: 'wiggle 3s ease-in-out infinite',
-        zoomOut: 'zoomOut 5s ease-in-out'
+        zoomOut: 'zoomOut 5s ease-in-out',
+        diagonal: 'diagonal 1.5s linear'
       }
     },
   },
